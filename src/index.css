@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,opsz,wght@0,6..30,300;0,6..30,400;0,6..30,500;0,6..30,600;0,6..30,700;0,6..30,800;1,6..30,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-accent: "Bricolage Grotesque", sans-serif;
+
+  --color-neon: #CCFF00;
+  --color-neon-dim: #B8E800;
+  --color-brand-pink: #FF2D5A;
+  --color-brand-indigo: #4F40F0;
+  --color-brand-aqua: #00CDB8;
+  --color-dark: #0D0E12;
+  --color-dark-2: #1C1B2E;
+  --color-surface: #F8F8F4;
+}
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface font-sans text-dark;
+    font-feature-settings: "kern", "liga", "calt";
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+
+  p, span, div {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+/* ── Gradient animated footer background ── */
+@keyframes gradientShift {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(0px)   scale(1);   opacity: 0.15; }
+  50%  { transform: translateY(-30px) scale(1.1); opacity: 0.25; }
+  100% { transform: translateY(0px)   scale(1);   opacity: 0.15; }
+}
+
+@keyframes pulseRing {
+  0%   { transform: scale(1);   opacity: 0.3; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+
+.footer-animated {
+  background: linear-gradient(
+    135deg,
+    #0D0E12 0%,
+    #1a1040 25%,
+    #0D0E12 50%,
+    #0e2020 75%,
+    #0D0E12 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+.footer-orb {
+  animation: floatUp 6s ease-in-out infinite;
+}
+
+.footer-orb-2 {
+  animation: floatUp 9s ease-in-out infinite 2s;
+}
+
+.footer-orb-3 {
+  animation: floatUp 7s ease-in-out infinite 4s;
+}
+
+/* ── Pricing cards glow ── */
+.pricing-glow {
+  box-shadow: 0 0 40px rgba(204, 255, 0, 0.15), 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.pricing-glow-pink {
+  box-shadow: 0 0 40px rgba(255, 45, 90, 0.15), 0 20px 60px rgba(0,0,0,0.1);
+}
+
+/* ── Service card shimmer ── */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.card-shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+/* ── Spin slow for badge ── */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* ── Scan bar animation ── */
+@keyframes scanBar {
+  0%   { top: 0%; }
+  50%  { top: 90%; }
+  100% { top: 0%; }
+}
+
+.scan-bar {
+  animation: scanBar 2s ease-in-out infinite;
+}
+
+/* ── Ticker animation ── */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  animation: ticker 30s linear infinite;
+}
+
+/* ── Price strike line ── */
+.price-strike {
+  position: relative;
+  display: inline-block;
+}
+.price-strike::after {
+  content: '';
+  position: absolute;
+  left: -2px; right: -2px;
+  top: 50%;
+  height: 2px;
+  background: #FF2D5A;
+  transform: rotate(-4deg);
+}
+
+/* ── Gradient text ── */
+.text-gradient-neon {
+  background: linear-gradient(135deg, #CCFF00 0%, #00CDB8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-fire {
+  background: linear-gradient(135deg, #FF2D5A 0%, #FFB300 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Pulse ring ── */
+.pulse-ring::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #CCFF00;
+  animation: pulseRing 1.5s ease-out infinite;
+}
+
+/* ── Comparison table styles ── */
+.compare-row:nth-child(even) {
+  background: rgba(204, 255, 0, 0.03);
+}
