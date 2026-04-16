@@ -57,6 +57,11 @@
   100% { transform: scale(2.2); opacity: 0; }
 }
 
+@keyframes neonPulse {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(204,255,0,0.16), 0 0 22px rgba(204,255,0,0.08); }
+  50% { box-shadow: 0 0 0 1px rgba(204,255,0,0.34), 0 0 34px rgba(0,205,184,0.16); }
+}
+
 @keyframes slideRight {
   from { transform: translateX(-100%); }
   to   { transform: translateX(100%); }
@@ -94,6 +99,28 @@
 
 .pricing-glow-pink {
   box-shadow: 0 0 40px rgba(255, 45, 90, 0.15), 0 20px 60px rgba(0,0,0,0.1);
+}
+
+/* ── Premium box gradient for black boxes ── */
+.premium-box-gradient {
+  background: linear-gradient(135deg, rgba(78, 30, 95, 0.85) 0%, rgba(135, 45, 65, 0.75) 50%, rgba(40, 75, 70, 0.85) 100%);
+  background-size: 100% 100%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ── Modern Dark Box with Grid and Radiance ── */
+.modern-dark-box {
+  background-color: #13111C;
+  background-image: 
+    radial-gradient(ellipse at 15% 15%, rgba(184, 232, 0, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 90%, rgba(255, 45, 90, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 60%, rgba(79, 64, 240, 0.35) 0%, transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px, 28px 28px;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 /* ── Service card shimmer ── */
@@ -183,4 +210,36 @@
 /* ── Comparison table styles ── */
 .compare-row:nth-child(even) {
   background: rgba(204, 255, 0, 0.03);
+}
+
+/* ── Neon section frame ── */
+.neon-frame {
+  position: relative;
+  border: 1px solid rgba(204, 255, 0, 0.16);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+    0 0 0 1px rgba(204, 255, 0, 0.08),
+    0 12px 40px rgba(13, 14, 18, 0.08);
+  animation: neonPulse 4.5s ease-in-out infinite;
+}
+
+.neon-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(204,255,0,0.65), rgba(79,64,240,0.45), rgba(255,45,90,0.4), rgba(0,205,184,0.45));
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.neon-frame > * {
+  position: relative;
+  z-index: 1;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(204,255,0,0.45), rgba(79,64,240,0.35), transparent);
 }

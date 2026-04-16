@@ -40,31 +40,31 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
 
   const statCards = [
     { value: "↑137%", label: "Organic Traffic Lift", color: "text-neon" },
-    { value: "₹89/mo", label: "Plans Start From", color: "text-emerald-400" },
+    { value: "$5/mo", label: "Plans Start From", color: "text-emerald-400" },
     { value: "3.2×", label: "Google Ads ROAS", color: "text-amber-400" },
     { value: "50K", label: "Monthly Impressions", color: "text-brand-pink" },
   ];
 
   const trust = [
-    "DPIIT Startup India Registered",
+    "Remote-first Growth Team",
     "50+ International Clients",
-    "USA & Global Coverage",
+    "Global Coverage",
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 lg:py-20">
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-12 items-start">
         {/* ── LEFT HERO ── */}
-        <div className="lg:col-span-7 space-y-10">
+        <div className="xl:col-span-7 space-y-8 lg:space-y-10 min-w-0">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-neon rounded-full"
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-neon rounded-full neon-frame"
           >
             <Zap className="w-3.5 h-3.5 fill-dark text-dark" />
-            <span className="text-[11px] font-black uppercase tracking-[0.18em] text-dark">
-              DPIIT Startup India Registered · Lucknow, India
+            <span className="text-[11px] font-black uppercase tracking-[0.18em] text-dark whitespace-normal text-center sm:text-left">
+              Global Growth Systems · Motion-First Digital Team
             </span>
           </motion.div>
 
@@ -76,8 +76,8 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
             className="space-y-3"
           >
             <h1
-              className="font-display font-black text-dark leading-[0.88] tracking-[-0.04em]"
-              style={{ fontSize: "clamp(3.5rem, 8vw, 6.5rem)" }}
+              className="font-display font-black text-dark leading-[0.88] tracking-[-0.05em] max-w-[11ch]"
+              style={{ fontSize: "clamp(2.9rem, 7vw, 6rem)" }}
             >
               Turn{" "}
               <span className="text-brand-pink">Search</span>
@@ -99,12 +99,11 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-[1.05rem] font-semibold leading-[1.7] text-dark/55 max-w-[520px]"
+            className="text-[1rem] sm:text-[1.05rem] font-semibold leading-[1.7] text-dark/55 max-w-[540px]"
           >
-            NNN AI Labs is an international SEO & digital marketing agency
-            helping small businesses and startups capture high-intent searches —
-            with <strong className="text-dark/80 font-bold">transparent Google Ads pricing</strong> and a global
-            growth playbook built for lean teams.
+            NNN AI Labs helps small businesses and startups capture high-intent searches with
+            <strong className="text-dark/80 font-bold"> transparent Google Ads pricing</strong>,
+            fast creative execution, and a global growth playbook built for lean teams.
           </motion.p>
 
           {/* Trust badges */}
@@ -117,7 +116,7 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
             {trust.map((t) => (
               <span
                 key={t}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-white border border-gray-100 rounded-full text-[11px] font-bold text-dark/60 uppercase tracking-wider shadow-sm"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-white border border-gray-100 rounded-full text-[11px] font-bold text-dark/60 uppercase tracking-wider shadow-sm neon-frame"
               >
                 <CheckCircle className="w-3 h-3 text-emerald-500" />
                 {t}
@@ -132,30 +131,29 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
             transition={{ delay: 0.3 }}
             className="relative"
           >
-            <div className="bg-dark rounded-[2rem] p-8 space-y-6 relative overflow-hidden">
+            <div className="bg-dark modern-dark-box rounded-[2rem] p-6 sm:p-8 space-y-6 relative overflow-hidden neon-frame card-shimmer">
               {/* Ambient glow */}
               <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-neon/10 blur-3xl pointer-events-none" />
               <div className="absolute -bottom-8 -left-8 w-36 h-36 rounded-full bg-brand-indigo/15 blur-3xl pointer-events-none" />
 
               <div className="relative">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-neon rounded-full text-[10px] font-black uppercase tracking-widest text-dark mb-4">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-neon rounded-full text-[10px] font-black uppercase tracking-widest text-dark mb-4 neon-frame">
                   <Zap className="w-3 h-3 fill-dark" />
                   Free AI Tool — No Sign‑Up
                 </span>
 
                 <h2
-                  className="font-display font-black text-white leading-[1.0] tracking-[-0.03em]"
-                  style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)" }}
+                  className="font-display font-black text-white leading-[1.0] tracking-[-0.035em] max-w-[12ch]"
+                  style={{ fontSize: "clamp(1.65rem, 3.2vw, 2.45rem)" }}
                 >
                   Free Website SEO
                   <br />
                   &amp; Marketing Scan
                 </h2>
 
-                <p className="mt-3 text-[0.88rem] font-medium leading-[1.65] text-white/55">
-                  Paste your URL below. Our Gemini AI analyses your SEO health,
-                  digital marketing gaps, Google Ads opportunity and delivers a
-                  free actionable report — instantly.
+                <p className="mt-3 text-[0.88rem] font-medium leading-[1.65] text-white/60 max-w-[38rem]">
+                  Paste your URL below. Our OpenAI-powered audit analyses your SEO health,
+                  digital marketing gaps, Google Ads opportunity and delivers a free actionable report instantly.
                 </p>
               </div>
 
@@ -164,7 +162,7 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
                 <div className="flex flex-col sm:flex-row gap-3">
                   {/* URL input */}
                   <div className="relative flex-1">
-                    <Globe className="absolute left-4 top-1/2 -translate-y-1/2 w-4.5 h-4.5 text-white/30" />
+                    <Globe className="absolute left-4 top-1/2 -translate-y-1/2 w-[1.125rem] h-[1.125rem] text-white/30" />
                     <input
                       type="text"
                       value={url}
@@ -204,12 +202,12 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
                   whileTap={{ scale: 0.97 }}
                   type="submit"
                   disabled={isScanning}
-                  className="w-full py-4 bg-neon text-dark font-black uppercase text-[0.78rem] tracking-widest rounded-2xl hover:bg-neon/90 disabled:opacity-50 transition-all flex items-center justify-center gap-2.5 shadow-xl shadow-lime-200/20"
+                  className="w-full py-4 bg-neon text-dark font-black uppercase text-[0.78rem] tracking-widest rounded-2xl hover:bg-neon/90 disabled:opacity-50 transition-all flex items-center justify-center gap-2.5 shadow-xl shadow-lime-200/20 neon-frame"
                 >
                   {isScanning ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      Analysing with Gemini AI…
+                      Analysing with OpenAI GPT-4.1 mini…
                     </>
                   ) : (
                     <>
@@ -233,7 +231,7 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#25D366] text-white rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-[#20BD5A] transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#25D366] text-white rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-[#20BD5A] transition-colors neon-frame"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />
                   WhatsApp Us
@@ -242,14 +240,14 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
                   href={GOOGLE_CHAT_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-brand-indigo text-white rounded-xl text-[11px] font-black uppercase tracking-widest hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-brand-indigo text-white rounded-xl text-[11px] font-black uppercase tracking-widest hover:opacity-90 transition-opacity neon-frame"
                 >
                   <Globe className="w-3.5 h-3.5" />
                   Google Chat
                 </a>
                 <a
                   href="mailto:sudarshanailabs@gmail.com"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/10 text-white rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-white/15 transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/10 text-white rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-white/15 transition-colors neon-frame"
                 >
                   <Mail className="w-3.5 h-3.5" />
                   Email
@@ -260,13 +258,13 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
         </div>
 
         {/* ── RIGHT KPI PANEL ── */}
-        <div className="lg:col-span-5 space-y-5">
+        <div className="xl:col-span-5 space-y-5 min-w-0">
           {/* KPI dark card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="bg-dark p-8 rounded-[2.5rem] text-white space-y-7 relative overflow-hidden"
+            className="bg-dark modern-dark-box p-6 sm:p-8 rounded-[2.5rem] text-white space-y-7 relative overflow-hidden neon-frame"
           >
             <div className="absolute -top-16 -right-16 w-40 h-40 rounded-full bg-neon/8 blur-3xl" />
             <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-brand-pink/10 blur-3xl" />
@@ -276,24 +274,29 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
             </p>
 
             <div className="grid grid-cols-2 gap-3.5">
-              {statCards.map((s) => (
-                <div
+              {statCards.map((s, i) => (
+                <motion.div
                   key={s.label}
-                  className="p-5 bg-white/6 rounded-2xl border border-white/8 space-y-1.5"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 + i * 0.1 }}
+                  whileHover={{ scale: 1.03, y: -4 }}
+                  className="p-4 sm:p-5 premium-box-gradient rounded-2xl border border-white/10 space-y-1.5 neon-frame min-w-0 overflow-hidden relative shadow-2xl"
                 >
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
                   <p
                     className={cn(
-                      "font-display font-black leading-none tracking-tight",
+                      "font-display font-black leading-none tracking-tight break-words",
                       s.color
                     )}
-                    style={{ fontSize: "clamp(1.6rem, 3vw, 2rem)" }}
+                    style={{ fontSize: "clamp(1.35rem, 2.4vw, 1.9rem)" }}
                   >
                     {s.value}
                   </p>
                   <p className="text-[10px] font-bold uppercase tracking-wider text-white/40">
                     {s.label}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
 
@@ -313,7 +316,7 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-neon/15 p-8 rounded-[2.5rem] border-2 border-neon/25 space-y-5"
+            className="bg-neon/15 p-8 rounded-[2.5rem] border-2 border-neon/25 space-y-5 neon-frame"
           >
             <div className="w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-sm">
               <Globe className="w-5 h-5 text-brand-indigo" />
@@ -351,7 +354,7 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.38 }}
-            className="bg-white p-6 rounded-[2rem] border-2 border-gray-100 space-y-4"
+            className="bg-white p-6 rounded-[2rem] border-2 border-gray-100 space-y-4 neon-frame"
           >
             <p className="text-[10px] font-black uppercase tracking-[0.18em] text-dark/35">
               Our Ecosystem
@@ -407,7 +410,7 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
                   className="font-display font-black text-white tracking-tight leading-tight"
                   style={{ fontSize: "1.7rem" }}
                 >
-                  Gemini AI Analysing…
+                  OpenAI GPT-4.1 mini analysing…
                 </h3>
                 <p className="text-[0.85rem] font-medium text-white/50 leading-relaxed">
                   Crawling page structure, checking SEO signals, evaluating
@@ -426,7 +429,7 @@ export default function Scanner({ onScan, isScanning }: ScannerProps) {
               </div>
 
               <p className="text-[10px] font-black text-white/25 uppercase tracking-widest">
-                Powered by Google Gemini — NNN AI Labs
+                Powered by ChatGPT API — NNN AI Labs
               </p>
             </div>
           </motion.div>
